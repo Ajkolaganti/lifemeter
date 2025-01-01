@@ -9,6 +9,7 @@ import { getLifeExpectancy } from './data/lifeExpectancy';
 import { getDailyQuote, shareQuote } from './data/dailyQuotes';
 import { saveLead } from './services/leads';
 import { Card } from './components/Card';
+import { AdSense } from './components/AdSense';
 
 function ProgressSection({ title, description, current, total, gradient }: {
   title: string;
@@ -113,6 +114,13 @@ export function App() {
 
         {/* Main Content - Add padding-top to account for fixed header */}
         <div className="pt-20">
+          {/* Add AdSense after some content */}
+          <div className="my-8">
+            <AdSense 
+              slot="your-ad-slot-id"
+              style={{ display: 'block', textAlign: 'center' }}
+            />
+          </div>
           {userData ? (
             <div className="container mx-auto px-4 py-12">
               <div className="max-w-4xl mx-auto space-y-8">
